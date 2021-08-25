@@ -278,8 +278,8 @@ export class AcmCertificate extends cdktf.TerraformResource {
 
   // options - computed: false, optional: true, required: false
   private _options?: AcmCertificateOptions[];
-  public get options() {
-    return this.interpolationForAttribute('options') as any;
+  public get options(): AcmCertificateOptions[] {
+    return this.getListAttribute('options');
   }
   public set options(value: AcmCertificateOptions[]) {
     this._options = value;
